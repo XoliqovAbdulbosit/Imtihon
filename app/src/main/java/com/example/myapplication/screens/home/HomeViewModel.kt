@@ -10,10 +10,10 @@ class HomeViewModel(val model: HomeModel) : ViewModel() {
     val items: LiveData<MutableList<Item>> = _items
 
     val database = listOf(
-        Item(name = "A", description = "A"),
-        Item(name = "B", description = "B"),
-        Item(name = "C", description = "C"),
-        Item(name = "D", description = "D"),
+        Item(name = "iPhone 15 Pro Max", description = "More than power"),
+        Item(name = "Samsung S24 Ultra", description = "Bright Future"),
+        Item(name = "Redmi Note 13 Pro Plus", description = "All In One"),
+        Item(name = "Huawei Mate XS", description = "Your cool mate"),
     )
 
     init {
