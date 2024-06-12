@@ -1,6 +1,8 @@
 package com.example.myapplication.screens.home
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -21,20 +23,31 @@ fun HomeView(viewModel: HomeViewModel, navController: NavController) {
     Scaffold(bottomBar = {
         BottomNavigationComponent(navController = navController)
     }) {
-        LazyColumn(
+        Column(
             modifier = Modifier
+                .fillMaxSize()
                 .padding(it)
-                .padding(10.dp)
         ) {
-            items(items!!) { item ->
-                Text(item.name,
-                    fontSize = 20.sp,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 5.dp)
-                        .clickable {
-                            navController.navigate("Info/${item.id}")
-                        })
+            Text(
+                "Kitoblar",
+                fontSize = 27.sp,
+                modifier = Modifier
+                    .padding(horizontal = 5.dp)
+                    .padding(top = 5.dp)
+            )
+            LazyColumn(
+                modifier = Modifier.padding(10.dp)
+            ) {
+                items(items!!) { item ->
+                    Text(item.name,
+                        fontSize = 18.sp,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 5.dp)
+                            .clickable {
+                                navController.navigate("Info/${item.id}")
+                            })
+                }
             }
         }
     }

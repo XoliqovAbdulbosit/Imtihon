@@ -6,7 +6,8 @@ import androidx.lifecycle.ViewModel
 import com.example.myapplication.database.Item
 
 class InfoViewModel(val model: InfoModel, val id: Int) : ViewModel() {
-    private var _item = MutableLiveData(Item(name = "", description = ""))
+    private var _item =
+        MutableLiveData(Item(name = "", author = "", description = "", price = 0, rank = 0.0))
     val item: LiveData<Item> = _item
 
     init {
